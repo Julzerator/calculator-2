@@ -27,6 +27,8 @@ while True:
         output = cube(int(tokenized_input[1]))
     elif tokenized_input[0] == "pow":
         output = power(int(tokenized_input[1]),int(tokenized_input[2]))
+    elif tokenized_input[0] == "mod":
+        output = mod(int(tokenized_input[1]),int(tokenized_input[2]))
     elif tokenized_input[0] == "q":
         sys.exit()
     print output
