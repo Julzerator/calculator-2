@@ -31,22 +31,33 @@ print "|_____________________|"
 while True:
     user_input = raw_input(">")
     tokenized_input = user_input.split(" ")
-    if tokenized_input[0] == "+":
-        output = add(int(tokenized_input[1]),int(tokenized_input[2]))
-    elif tokenized_input[0] == "-":
-        output = subtract(int(tokenized_input[1]),int(tokenized_input[2]))
-    elif tokenized_input[0] == "*":
-        output = multiply(int(tokenized_input[1]),int(tokenized_input[2]))
-    elif tokenized_input[0] == "/":
-        output = divide(float(tokenized_input[1]),float(tokenized_input[2]))
-    elif tokenized_input[0] == "square":
-        output = square(int(tokenized_input[1]))
-    elif tokenized_input[0] == "cube":
-        output = cube(int(tokenized_input[1]))
-    elif tokenized_input[0] == "pow":
-        output = power(int(tokenized_input[1]),int(tokenized_input[2]))
-    elif tokenized_input[0] == "mod":
-        output = mod(int(tokenized_input[1]),int(tokenized_input[2]))
-    elif tokenized_input[0] == "q":
-        sys.exit()
-    print output
+
+    #check to see if the input is valid here:
+    confirm_numbers = tokenized_input[1:]
+    for num in confirm_numbers:
+        if num.isdigit() == False:
+            print "Please enter valid numbers."
+            break
+        else:
+            if tokenized_input[0] == "+":
+                output = add(int(tokenized_input[1]),int(tokenized_input[2]))
+            elif tokenized_input[0] == "-":
+                output = subtract(int(tokenized_input[1]),int(tokenized_input[2]))
+            elif tokenized_input[0] == "*":
+                output = multiply(int(tokenized_input[1]),int(tokenized_input[2]))
+            elif tokenized_input[0] == "/":
+                output = divide(float(tokenized_input[1]),float(tokenized_input[2]))
+            elif tokenized_input[0] == "square":
+                if len(tokenized_input) != 2:
+                    print "Please only enter one argument after typing square."
+
+                output = square(int(tokenized_input[1]))
+            elif tokenized_input[0] == "cube":
+                output = cube(int(tokenized_input[1]))
+            elif tokenized_input[0] == "pow":
+                output = power(int(tokenized_input[1]),int(tokenized_input[2]))
+            elif tokenized_input[0] == "mod":
+                output = mod(int(tokenized_input[1]),int(tokenized_input[2]))
+            elif tokenized_input[0] == "q":
+                sys.exit()
+            return output
