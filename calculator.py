@@ -21,6 +21,8 @@ while True:
         output = multiply(int(tokenized_input[1]),int(tokenized_input[2]))
     elif tokenized_input[0] == "/":
         output = divide(float(tokenized_input[1]),float(tokenized_input[2]))
+    elif tokenized_input[0] == "square":
+        output = square(int(tokenized_input[1]))
     elif tokenized_input[0] == "q":
         sys.exit()
     print output
