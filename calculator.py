@@ -6,6 +6,7 @@ calculator program yourself in this file.
 """
 
 from arithmetic import *
+import sys
 
 
 # Your code goes here
@@ -14,4 +15,8 @@ while True:
     tokenized_input = user_input.split(" ")
     if tokenized_input[0] == "+":
         output = add(int(tokenized_input[1]),int(tokenized_input[2]))
+    elif tokenized_input[0] == "-":
+        output = subtract(int(tokenized_input[1]),int(tokenized_input[2]))
+    elif tokenized_input[0] == "q":
+        sys.exit()
     print output
